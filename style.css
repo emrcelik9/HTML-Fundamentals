@@ -10,7 +10,7 @@
 body {
   font-family: sans-serif;
   color: #444;
-  border-top: 5px solid #1098ad;
+  border-top: 10px solid #1098ad;
   position: relative;
 }
 
@@ -23,7 +23,7 @@ body {
 
 .main-header {
   background-color: #e7e7e7;
-  padding: 20px 40px;
+  padding: 40px 40px;
   margin-bottom: 60px;
   /*   height: 80px; */
 }
@@ -117,7 +117,7 @@ li:last-child {
   font-size: 16px;
 }
 .related-author {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -144,7 +144,7 @@ li:last-child {
   font-style: italic;
 }
 
-li:nth-child(2) {
+li:nth-child(even) {
   /*   color: red; */
 }
 
@@ -155,10 +155,12 @@ article p:first-child {
 
 /* styling links */
 
-a:link,
-a:visited {
+a:link {
   color: #1098ad;
   text-decoration: none;
+}
+a:visited {
+  color: #1098ad;
 }
 
 a:hover {
@@ -187,7 +189,7 @@ nav a:link {
   display: block; */
 
   margin-right: 30px;
-  margin-top: 10px;
+
   display: inline-block;
 }
 
@@ -222,7 +224,7 @@ h2 {
   position: relative;
 }
 
-h2::after {
+h2::before {
   content: "TOP";
   background-color: yellow;
   color: black;
@@ -242,7 +244,7 @@ h2::after {
 }
 
 .copyright {
-  color: ;
+  color: blue;
 }
 
 .text {
@@ -251,8 +253,7 @@ h2::after {
 
 footer p {
   color: green !important;
-}
- */
+} */
 
 /* FLOATS */
 /*
@@ -327,7 +328,7 @@ footer {
   font-weight: bold;
   font-style: normal;
   margin-bottom: 5px;
-  display: inline-block;
+  display: block;
 }
 .related-author {
   margin-bottom: 0;
@@ -336,6 +337,8 @@ footer {
   font-style: italic;
 }
 
+/*Flexbox Layout*/
+/* 
 .row {
   display: flex;
   gap: 75px;
@@ -349,11 +352,36 @@ article {
 }
 
 aside {
-  /* 
+
          DEFAULTS:
         flex-grow:0;
         flex-shrink: 1;
         flex-basis:auto;
- */
+ 
   flex: 0 0 300px;
+}
+ */
+
+/* CSS GRID LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header {
+  /* grid-column: 1 / span 2; */
+  grid-column: 1 / -1;
+}
+
+article {
+}
+
+aside {
+}
+
+footer {
+  grid-column: 1 / -1;
 }

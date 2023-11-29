@@ -39,8 +39,26 @@
         font-size: 40px;
         margin: 40px;
 
-        display: grid;
-        grid-template-columns: 250px 150px;
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+
+        /*   gap: 30px; */
+        column-gap: 20px;
+        row-gap: 40px;
+
+        .el--8 {
+          grid-column: 2 / 3;
+          grid-row: 1 / 2;
+        }
+
+        .el--2 {
+          /* grid-column: 1 / 4; */
+          /*       grid-column: 1 / span 3;  */
+          /*    grid-column: 1 / -1; */
+          grid-column: 1 / -1;
+          grid-row: 2;
+        }
 
         /* CSS GRID */
       }
@@ -50,13 +68,32 @@
         font-family: sans-serif;
         background-color: black;
         font-size: 40px;
-        margin: 100px;
+        margin: 40px;
 
-        width: 1000px;
+        width: 700px;
         height: 600px;
-        display: none;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        gap: 50px;
+
+        /* Konteyner içindeki rayların hizalnaması
+      boş alan */
+
+        justify-content: center;
+        /*   align-content: space-between; */
+        align-content: center;
+
+        /* Aligning Items Inside Cells :
+         moving items around inside cells*/
+        align-items: center;
+
+        .el--3 {
+          align-self: end;
+          justify-self: end;
+        }
       }
     </style>
   </head>
